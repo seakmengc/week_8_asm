@@ -1,5 +1,21 @@
 @extends('layouts.app')
 
+@section('header')
+<header class="masthead" style="background-image: url('../img/contact-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Reset Password</h1>
+                    <span class="subheading">This is what I do.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,9 +25,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <form method="POST" action="{{ route('password.email') }}">
@@ -24,9 +40,9 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
