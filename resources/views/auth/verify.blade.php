@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('background_url', 'img/contact-bg.jpg')
+
+@section('header_title', 'Verify Email Address')
+
+@section('header_subtitle')
+    <span class="subheading">This is what I do.</span>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,9 +17,9 @@
 
                 <div class="card-body">
                     @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ __('A fresh verification link has been sent to your email address.') }}
+                    </div>
                     @endif
 
                     {{ __('Before proceeding, please check your email for a verification link.') }}
